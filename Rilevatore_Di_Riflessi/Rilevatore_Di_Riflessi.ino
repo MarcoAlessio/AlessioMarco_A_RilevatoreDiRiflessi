@@ -1,23 +1,17 @@
-#include <LiquidCrystal.h>
+#include <LiquidCrystal_I2C.h>
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-
-/*String messaggi[] = {
-  "Ciao"
-}*/
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup(){
-  lcd.begin(16, 2);
+  lcd.init();
+  lcd.backlight();
 }
 
 void loop(){
-  //for(int i = 0; i < 5; i++){
-    lcd.clear();
-    lcd.setCursor (0, 0);
-    lcd.print("Progetto arduino");
-    lcd.setCursor (0, 1);
-    lcd.print("Rileva riflessi");
-    //lcd.print(messaggi[i]);
-    delay(1000);
-  //}
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Progetto Arduino");
+  lcd.setCursor(0, 1);
+  lcd.print("Rileva riflessi");
+  delay(1000);
 }
