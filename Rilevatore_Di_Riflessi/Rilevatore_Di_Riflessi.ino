@@ -53,7 +53,7 @@ void loop(){
     if(result1 <= 500 && result2 <= 500)
       digitalWrite(GREEN, HIGH);
     else
-      digitalWrite(RED, LOW);
+      digitalWrite(RED, HIGH);
     delay(3500);
     lcd.clear();
     digitalWrite(GREEN, LOW);
