@@ -47,9 +47,7 @@ int generic_loop(int object, int button, int row, String test_number){
   }
   digitalWrite(object, LOW);
   lcd.setCursor(0, row);
-  lcd.print(test_number);
-  lcd.print(result);
-  lcd.print("ms");
+  lcd.print((String)test_number + (String)result + "ms");
   return result;
 }
 
@@ -83,8 +81,7 @@ void outcome(){
 void error_message(String type_test){
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("TEST ");
-  lcd.print(type_test);
+  lcd.print("TEST " + (String)type_test);
   lcd.setCursor(0, 1);
   lcd.print("NON VALIDO");
   delay(3500);
